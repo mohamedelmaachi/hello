@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    tools {
+        jdk 'openjdk-1.8'
+        maven 'Maven_3_5_2'
+    }
+    stages {
+
+        stage('Build') {
+            steps {
+                git "https://github.com/mohamedelmaachi/hello.git/"
+                echo 'Building..'
+                sh "mvn clean install"
+            }
+        }
+    }
+}
