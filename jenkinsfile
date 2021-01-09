@@ -8,7 +8,6 @@ pipeline {
 
         stage('Build') {
             steps {
-                git "https://github.com/mohamedelmaachi/hello.git/"
                 echo 'Building..'
                 sh "mvn clean install"
             }
